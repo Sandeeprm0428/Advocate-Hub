@@ -344,9 +344,12 @@ export default function Home() {
       </section>
 
       {/* ── SECTION 6: FAQs ── */}
-      <section className="lw-section">
-        <div className="lw-section-inner lw-narrow">
-          <div className="lw-section-head" style={{ textAlign: "center" }}>
+      <section className="lw-section lw-faq-section">
+        <div className="lw-section-inner lw-faq-layout">
+          <div className="lw-section-head lw-faq-heading">
+            <div className="lw-faq-eyebrow">
+              {isKn ? "ಸಹಾಯ ಕೇಂದ್ರ" : "HELP CENTER"}
+            </div>
             <h2 className="lw-section-title">
               {isKn ? "ಪದೇ ಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು" : "Frequently Asked Questions"}
             </h2>
@@ -360,13 +363,26 @@ export default function Home() {
             {faqs.map((faq, i) => (
               <div key={i} className={`lw-faq-item ${openFaq === i ? "open" : ""}`}>
                 <button
+                  type="button"
                   className="lw-faq-q"
+                  id={`home-faq-question-${i}`}
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  aria-expanded={openFaq === i}
+                  aria-controls={`home-faq-answer-${i}`}
                 >
                   {faq.q}
-                  <span className="lw-faq-icon">{openFaq === i ? "−" : "+"}</span>
+                  <span className="lw-faq-icon" aria-hidden="true">{openFaq === i ? "−" : "+"}</span>
                 </button>
-                {openFaq === i && <div className="lw-faq-a">{faq.a}</div>}
+                {openFaq === i && (
+                  <div
+                    className="lw-faq-a"
+                    id={`home-faq-answer-${i}`}
+                    role="region"
+                    aria-labelledby={`home-faq-question-${i}`}
+                  >
+                    {faq.a}
+                  </div>
+                )}
               </div>
             ))}
           </div>

@@ -17,29 +17,19 @@ const PRIMARY_CHAT_API = "http://localhost:5001/chat";
 const FALLBACK_CHAT_API = "/api/chat";
 
 const QUICK_ACTIONS_EN = [
-  { label: "💬 I have questions",   msg: "I have some questions" },
-  { label: "💡 Legal Advice",       msg: "I need legal advice"   },
-  { label: "🔍 Find Advocates",     msg: "Show all advocates"    },
-  { label: "⚖️ Criminal Lawyers",   msg: "Show criminal lawyers" },
-  { label: "👨‍👩‍👧 Family Lawyers", msg: "Show family lawyers"   },
-  { label: "🏠 Property Lawyers",   msg: "Show property lawyers" },
-  { label: "🚗 Road Accident Law",  msg: "road accident death"   },
-  { label: "📜 Cheque Bounce",      msg: "cheque bounce notice"  },
-  { label: "📋 What is bail?",      msg: "What is bail?"         },
-  { label: "⚖️ Bare Acts",          msg: "Go to Bare Acts"       },
+  { label: "🔍 Criminal lawyers in Delhi", msg: "Find criminal lawyers in Delhi" },
+  { label: "👤 Advocate Priya Sharma", msg: "Open profile of Adv. Priya Sharma" },
+  { label: "⚖️ Anticipatory bail", msg: "What is anticipatory bail?" },
+  { label: "👨‍👩‍👧 Family lawyers", msg: "Show me all family lawyers" },
+  { label: "📜 Bare Acts", msg: "Go to Bare Acts" },
 ];
 
 const QUICK_ACTIONS_KN = [
-  { label: "💬 ನನಗೆ ಪ್ರಶ್ನೆಗಳಿವೆ",   msg: "ನನಗೆ ಕೆಲವು ಪ್ರಶ್ನೆಗಳಿವೆ" },
-  { label: "💡 ಕಾನೂನು ಸಲಹೆ",        msg: "ಕಾನೂನು ಸಲಹೆ ಬೇಕು"       },
-  { label: "🔍 ಎಲ್ಲಾ ವಕೀಲರು",        msg: "ಎಲ್ಲಾ ವಕೀಲರು"           },
-  { label: "⚖️ ಕ್ರಿಮಿನಲ್ ವಕೀಲರು",    msg: "ಕ್ರಿಮಿನಲ್ ವಕೀಲರು"       },
-  { label: "👨‍👩‍👧 ಕೌಟುಂಬಿಕ ವಕೀಲರು",  msg: "ಕೌಟುಂಬಿಕ ವಕೀಲರು"       },
-  { label: "🏠 ಆಸ್ತಿ ವಕೀಲರು",        msg: "ಆಸ್ತಿ ವಕೀಲರು"           },
-  { label: "🚗 ರಸ್ತೆ ಅಪಘಾತ ಪರಿಹಾರ",  msg: "ರಸ್ತೆ ಅಪಘಾತದಲ್ಲಿ ಸಾವು"  },
-  { label: "📜 ಚೆಕ್ ಬೌನ್ಸ್ ನಿಯಮ",    msg: "ಚೆಕ್ ಬೌನ್ಸ್"            },
-  { label: "📋 ಬೇಲ್ / ಜಾಮೀನು",       msg: "ಬೇಲ್ ಪಡೆಯುವುದು ಹೇಗೆ?" },
-  { label: "⚖️ Bare Acts",           msg: "Go to Bare Acts"        },
+  { label: "🔍 ಬೆಂಗಳೂರಿನಲ್ಲಿ ಕ್ರಿಮಿನಲ್ ವಕೀಲರು", msg: "ಬೆಂಗಳೂರಿನಲ್ಲಿ ಕ್ರಿಮಿನಲ್ ವಕೀಲರನ್ನು ಹುಡುಕಿ" },
+  { label: "👤 ವಕೀಲ ಪ್ರಿಯಾ ಶರ್ಮಾ", msg: "ವಕೀಲ ಪ್ರಿಯಾ ಶರ್ಮಾ ಅವರ ಪ್ರೊಫೈಲ್ ತೆರೆಯಿರಿ" },
+  { label: "⚖️ ನಿರೀಕ್ಷಣಾ ಜಾಮೀನು", msg: "ನಿರೀಕ್ಷಣಾ ಜಾಮೀನು ಎಂದರೇನು?" },
+  { label: "👨‍👩‍👧 ಕೌಟುಂಬಿಕ ವಕೀಲರು", msg: "ಎಲ್ಲಾ ಕೌಟುಂಬಿಕ ವಕೀಲರನ್ನು ತೋರಿಸಿ" },
+  { label: "📜 Bare Acts", msg: "Go to Bare Acts" },
 ];
 
 // ── Advocate result card inside chat ──────────────────────────

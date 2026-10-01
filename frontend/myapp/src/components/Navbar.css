@@ -303,6 +303,12 @@
   flex-shrink: 0;
 }
 
+.lw-navbar .lw-logo,
+.lw-navbar .lw-logo:hover,
+.lw-navbar .lw-logo:focus-visible {
+  text-decoration: none;
+}
+
 .lw-logo-tagline {
   padding-left: 12px;
   border-left: 2px solid var(--lw-brass-500);
@@ -370,31 +376,41 @@
   border: 0;
   border-radius: var(--lw-radius);
   white-space: nowrap;
-  transition: color 0.15s ease, background 0.15s ease;
+  transition: color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* Brass underline that answers hover / open state */
 .lw-nav-link::after {
   content: "";
   position: absolute;
-  left: 14px;
-  right: 14px;
+  right: 12px;
   bottom: 4px;
+  left: 12px;
   height: 2px;
-  background: var(--lw-brass-500);
+  border-radius: 2px;
+  background: var(--lw-brass-600);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.2s ease;
+  transition: transform 0.18s ease;
+  pointer-events: none;
 }
 
 .lw-nav-link:hover,
 .lw-nav-link.active {
   color: var(--lw-green-800);
+  background: var(--lw-brass-100);
+  box-shadow: inset 0 0 0 1px rgba(192, 138, 44, 0.25);
 }
 
 .lw-nav-link:hover::after,
-.lw-nav-link.active::after {
+.lw-nav-link.active::after,
+.lw-nav-link:focus-visible::after {
   transform: scaleX(1);
+}
+
+.lw-nav-links a,
+.lw-nav-links a:hover,
+.lw-nav-links a:focus-visible {
+  text-decoration: none;
 }
 
 /* Dropdown chevron (the <span class="lw-arrow"> is empty in the markup) */
@@ -424,8 +440,7 @@
   padding: 8px;
   background: var(--lw-surface);
   border: 1px solid var(--lw-line);
-  border-top: 3px solid var(--lw-brass-500);
-  border-radius: 0 0 var(--lw-radius) var(--lw-radius);
+  border-radius: var(--lw-radius);
   box-shadow: var(--lw-shadow);
   z-index: 20;
   animation: lw-drop-in 0.16s ease-out;
@@ -491,8 +506,7 @@
   padding: 20px;
   background: var(--lw-surface);
   border: 1px solid var(--lw-line);
-  border-top: 3px solid var(--lw-brass-500);
-  border-radius: 0 0 var(--lw-radius) var(--lw-radius);
+  border-radius: var(--lw-radius);
   box-shadow: var(--lw-shadow);
   z-index: 20;
   animation: lw-drop-in 0.16s ease-out;
@@ -692,17 +706,18 @@
     justify-content: space-between;
     padding: 14px 12px;
     font-size: 1rem;
-    border-bottom: 1px solid var(--lw-line);
-    border-radius: 0;
+    border-radius: var(--lw-radius);
   }
 
   .lw-nav-link::after {
-    display: none;
+    right: 12px;
+    bottom: 3px;
+    left: 12px;
   }
 
   .lw-nav-link:hover,
   .lw-nav-link.active {
-    background: var(--lw-surface-tint);
+    background: var(--lw-brass-100);
   }
 
   /* Menus open inline inside the drawer */
@@ -925,6 +940,14 @@
 .theme-dark .lw-nav-link:hover {
   color: #38bdf8;
   background: rgba(56, 189, 248, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.2);
+}
+
+[data-theme="dark"] .lw-nav-link.active,
+.theme-dark .lw-nav-link.active {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.2);
 }
 
 [data-theme="dark"] .lw-dropdown,
@@ -939,8 +962,27 @@
 [data-theme="dark"] .lw-dropdown-item:hover,
 .theme-dark .lw-dropdown-item:hover,
 [data-theme="dark"] .lw-mega-card:hover,
-.theme-dark .lw-mega-card:hover {
+.theme-dark .lw-mega-card:hover,
+[data-theme="dark"] .lw-mega-card:focus-visible,
+.theme-dark .lw-mega-card:focus-visible {
   background: #1e293b;
+}
+
+[data-theme="dark"] .lw-dd-icon,
+.theme-dark .lw-dd-icon {
+  background: #193b3a;
+}
+
+[data-theme="dark"] .lw-dropdown-item:hover .lw-dd-icon,
+.theme-dark .lw-dropdown-item:hover .lw-dd-icon,
+[data-theme="dark"] .lw-dropdown-item:focus-visible .lw-dd-icon,
+.theme-dark .lw-dropdown-item:focus-visible .lw-dd-icon {
+  background: #24504c;
+}
+
+[data-theme="dark"] .lw-mega-title,
+.theme-dark .lw-mega-title {
+  color: #5eead4;
 }
 
 [data-theme="dark"] .lw-dd-label,
@@ -955,6 +997,27 @@
 [data-theme="dark"] .lw-mega-card-desc,
 .theme-dark .lw-mega-card-desc {
   color: #94a3b8;
+}
+
+[data-theme="dark"] .lw-mega-all,
+.theme-dark .lw-mega-all {
+  color: #5eead4;
+}
+
+[data-theme="dark"] .lw-mega-all:hover,
+.theme-dark .lw-mega-all:hover {
+  border-bottom-color: #5eead4;
+}
+
+[data-theme="dark"] .lw-mega-talk,
+.theme-dark .lw-mega-talk {
+  color: #f8fafc;
+  background: #0f766e;
+}
+
+[data-theme="dark"] .lw-mega-talk:hover,
+.theme-dark .lw-mega-talk:hover {
+  background: #0d9488;
 }
 
 [data-theme="dark"] .lw-nav-links,

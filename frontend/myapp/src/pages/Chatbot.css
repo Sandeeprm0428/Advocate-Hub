@@ -5,16 +5,16 @@
 
 /* ── Variables ─────────────────────────────────────────────── */
 :root {
-  --cb-primary:   #2563eb;
-  --cb-primary-d: #1d4ed8;
-  --cb-bot-bg:    #f0f4ff;
-  --cb-user-bg:   #2563eb;
+  --cb-primary:   #087f73;
+  --cb-primary-d: #06665d;
+  --cb-bot-bg:    #eef6f3;
+  --cb-user-bg:   #087f73;
   --cb-white:     #ffffff;
-  --cb-border:    #e2e8f0;
-  --cb-text:      #1e293b;
-  --cb-muted:     #64748b;
-  --cb-radius:    14px;
-  --cb-shadow:    0 20px 60px rgba(0, 0, 0, 0.18);
+  --cb-border:    #dce8e4;
+  --cb-text:      #203b3b;
+  --cb-muted:     #65817b;
+  --cb-radius:    12px;
+  --cb-shadow:    0 22px 64px rgba(16, 43, 44, 0.24);
   --cb-font:      'Inter', 'Segoe UI', system-ui, sans-serif;
 }
 
@@ -27,7 +27,7 @@
   width:           60px;
   height:          60px;
   border-radius:   50%;
-  background:      linear-gradient(135deg, var(--cb-primary), #7c3aed);
+  background:      #087f73;
   color:           #fff;
   border:          none;
   font-size:       26px;
@@ -35,14 +35,14 @@
   display:         flex;
   align-items:     center;
   justify-content: center;
-  box-shadow:      0 4px 20px rgba(37, 99, 235, 0.45);
+  box-shadow:      0 5px 22px rgba(8, 127, 115, 0.38);
   transition:      transform 0.2s ease, box-shadow 0.2s ease;
   outline:         none;
 }
 
 .cb-fab:hover {
   transform:   scale(1.08);
-  box-shadow:  0 6px 28px rgba(37, 99, 235, 0.55);
+  box-shadow:  0 8px 30px rgba(8, 127, 115, 0.46);
 }
 
 .cb-fab.cb-fab-open {
@@ -115,7 +115,7 @@
 
 /* ── Header ────────────────────────────────────────────────── */
 .cb-header {
-  background:      linear-gradient(135deg, var(--cb-primary), #7c3aed);
+  background:      linear-gradient(130deg, #12383a, #087f73);
   padding:         14px 16px;
   display:         flex;
   align-items:     center;
@@ -264,7 +264,7 @@
   width:           28px;
   height:          28px;
   border-radius:   50%;
-  background:      linear-gradient(135deg, var(--cb-primary), #7c3aed);
+  background:      #087f73;
   display:         flex;
   align-items:     center;
   justify-content: center;
